@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Tasks</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="task-panel" aria-labelledby="app-title">
+      <header class="app-header">
+        <div>
+          <p class="eyebrow">Daily planner</p>
+          <h1 id="app-title">To-Do List</h1>
+        </div>
+        <div class="today" id="todayLabel"></div>
+      </header>
+
+      <form class="task-form" id="taskForm">
+        <label class="sr-only" for="taskInput">Task name</label>
+        <input
+          id="taskInput"
+          type="text"
+          name="task"
+          maxlength="120"
+          placeholder="Add a task for today"
+          autocomplete="off"
+          required
+        >
+        <button class="primary-button" type="submit" aria-label="Add task">
+          <span aria-hidden="true">+</span>
+        </button>
+      </form>
+
+      <div class="stats-grid" aria-label="Task counts">
+        <article>
+          <span id="totalCount">0</span>
+          <p>Total</p>
+        </article>
+        <article>
+          <span id="pendingCount">0</span>
+          <p>Pending</p>
+        </article>
+        <article>
+          <span id="completedCount">0</span>
+          <p>Completed</p>
+        </article>
+      </div>
+
+      <section class="task-section" aria-labelledby="pending-title">
+        <div class="section-heading">
+          <h2 id="pending-title">Pending Tasks</h2>
+          <span id="pendingBadge">0</span>
+        </div>
+        <ul class="task-list" id="pendingList"></ul>
+        <p class="empty-state" id="pendingEmpty">No pending tasks.</p>
+      </section>
+
+      <section class="task-section" aria-labelledby="completed-title">
+        <div class="section-heading">
+          <h2 id="completed-title">Completed Tasks</h2>
+          <span id="completedBadge">0</span>
+        </div>
+        <ul class="task-list completed-list" id="completedList"></ul>
+        <p class="empty-state" id="completedEmpty">No completed tasks yet.</p>
+      </section>
+    </section>
+  </main>
+
+  <template id="taskTemplate">
+    <li class="task-item">
+      <button class="status-toggle" type="button"></button>
+      <div class="task-content">
+        <p class="task-title"></p>
+        <div class="task-meta"></div>
+      </div>
+      <div class="task-actions">
+        <button class="icon-button edit-button" type="button" aria-label="Edit task">
+          <span aria-hidden="true">&#9998;</span>
+        </button>
+        <button class="icon-button delete-button" type="button" aria-label="Delete task">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+    </li>
+  </template>
+
+  <script src="script.js"></script>
+</body>
+</html>

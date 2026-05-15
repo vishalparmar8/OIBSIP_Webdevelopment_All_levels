@@ -1,0 +1,17 @@
+{
+  "name": "login-authentication",
+  "version": "1.0.0",
+  "description": "A simple dependency-free Node.js login authentication system.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node test-auth-flow.js"
+  },
+  "keywords": [
+    "login",
+    "authentication",
+    "node"
+  ],
+  "author": "",
+  "license": "MIT"
+}

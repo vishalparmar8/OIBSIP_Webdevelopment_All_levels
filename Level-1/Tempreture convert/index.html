@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temperature Converter</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app-shell">
+    <section class="converter-panel" aria-labelledby="page-title">
+      <div class="intro">
+        <p class="eyebrow">Temperature Converter</p>
+        <h1 id="page-title">Celsius, Fahrenheit, and Kelvin</h1>
+      </div>
+
+      <form class="converter-form" id="converterForm" novalidate>
+        <label class="field-group" for="temperatureInput">
+          <span>Temperature</span>
+          <input
+            type="number"
+            id="temperatureInput"
+            name="temperature"
+            placeholder="Example: 32"
+            step="any"
+            inputmode="decimal"
+            required
+          >
+        </label>
+
+        <div class="unit-grid">
+          <label class="field-group" for="fromUnit">
+            <span>From</span>
+            <select id="fromUnit" name="fromUnit" required>
+              <option value="celsius">Celsius (&deg;C)</option>
+              <option value="fahrenheit">Fahrenheit (&deg;F)</option>
+              <option value="kelvin">Kelvin (K)</option>
+            </select>
+          </label>
+
+          <label class="field-group" for="toUnit">
+            <span>To</span>
+            <select id="toUnit" name="toUnit" required>
+              <option value="fahrenheit">Fahrenheit (&deg;F)</option>
+              <option value="celsius">Celsius (&deg;C)</option>
+              <option value="kelvin">Kelvin (K)</option>
+            </select>
+          </label>
+        </div>
+
+        <button class="convert-button" type="submit">Convert</button>
+      </form>
+
+      <section class="result-card" aria-live="polite" aria-atomic="true">
+        <p class="result-label">Converted Temperature</p>
+        <p class="result-value" id="resultValue">--</p>
+        <p class="result-detail" id="resultDetail">Your result will appear here.</p>
+      </section>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
